@@ -8,6 +8,11 @@ public class FlyAtPlayer : MonoBehaviour
 
     private Vector3 playerPosition;
 
+    private void Awake()
+    {
+        gameObject.SetActive(false);
+    }
+
     private void Start()
     {
         playerPosition = player.transform.position;
