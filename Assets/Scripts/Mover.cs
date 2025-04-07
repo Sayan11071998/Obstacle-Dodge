@@ -1,31 +1,32 @@
 using UnityEngine;
 
 public class Mover : MonoBehaviour
-{
-    [SerializeField] private float moveSpeed = 10f;
-
-    private void Start()
-    {
-        PrintInstructions();
+{   
+    [SerializeField] float moveSpeed = 10f;
+    
+    void Start() 
+    {        
+        PrintInstruction();
     }
 
-    private void Update()
+    void Update()
     {
         MovePlayer();
     }
 
-    private void PrintInstructions()
+    void PrintInstruction()
     {
         Debug.Log("Welcome to the game!");
         Debug.Log("Move using arrow keys or wasd");
-        Debug.Log("Don't bump into objects");
+        Debug.Log("Don't bump into objects!");   
     }
 
-    private void MovePlayer()
+    void MovePlayer()
     {
-        float xValue = Input.GetAxis("Horizontal") * moveSpeed * Time.deltaTime;
+        float xValue = Input.GetAxis("Horizontal") * Time.deltaTime * moveSpeed;
         float yValue = 0f;
-        float zValue = Input.GetAxis("Vertical") * moveSpeed * Time.deltaTime;
+        float zValue = Input.GetAxis("Vertical") * Time.deltaTime * moveSpeed;
         transform.Translate(xValue, yValue, zValue);
     }
+
 }

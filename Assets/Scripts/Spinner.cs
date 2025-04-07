@@ -2,11 +2,16 @@ using UnityEngine;
 
 public class Spinner : MonoBehaviour
 {
-    [SerializeField] private float xAngle = 0f;
-    [SerializeField] private float yAngle = 0f;
-    [SerializeField] private float zAngle = 0f;
+    [SerializeField] float xAngle = 0f;
+    [SerializeField] float yAngle = 0f;
+    [SerializeField] float zAngle = 0f;
+    
+    void Start()
+    {
+        
+    }
 
-    private void Update()
+    void Update()
     {
         transform.Rotate(xAngle, yAngle, zAngle);
     }
