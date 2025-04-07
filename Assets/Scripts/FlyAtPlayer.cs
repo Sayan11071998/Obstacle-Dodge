@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class FlyAtPlayer : MonoBehaviour
@@ -14,6 +15,18 @@ public class FlyAtPlayer : MonoBehaviour
 
     private void Update()
     {
+        MoveToPlayer();
+        DestroyWhenReached();
+    }
+
+    private void MoveToPlayer()
+    {
         transform.position = Vector3.MoveTowards(transform.position, playerPosition, speed * Time.deltaTime);
+    }
+
+    private void DestroyWhenReached()
+    {
+        if (transform.position == playerPosition)
+            Destroy(gameObject);
     }
 }
