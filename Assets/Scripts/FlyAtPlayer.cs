@@ -2,37 +2,29 @@ using UnityEngine;
 
 public class FlyAtPlayer : MonoBehaviour
 {
-    [SerializeField] float speed = 1.0f;
-    [SerializeField] Transform player;
-    Vector3 playerPosition;
-    
-    void Awake() 
-    {
-        gameObject.SetActive(false);
-    }
-    
-    void Start()
-    {
-        playerPosition = player.transform.position;
-    }
+    [SerializeField] private float speed = 1.0f;
+    [SerializeField] private Transform player;
 
-    void Update()
+    private Vector3 playerPosition;
+
+    private void Awake() => gameObject.SetActive(false);
+    private void Start() => playerPosition = player.transform.position;
+
+    private void Update()
     {
         MoveToPlayer();
         DestroyWhenReached();
     }
 
-    void MoveToPlayer()
+    private void MoveToPlayer()
     {
-        transform.position = 
-        Vector3.MoveTowards(transform.position, playerPosition, Time.deltaTime*speed);
+        transform.position =
+        Vector3.MoveTowards(transform.position, playerPosition, Time.deltaTime * speed);
     }
 
-    void DestroyWhenReached()
+    private void DestroyWhenReached()
     {
         if (transform.position == playerPosition)
-        {
             Destroy(gameObject);
-        }
     }
 }
