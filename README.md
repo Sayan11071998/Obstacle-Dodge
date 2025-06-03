@@ -55,6 +55,7 @@ Building **Obstacle Dodge** has been an exploration of precise control, reactive
 The modular architecture allows rapid prototyping of new obstacles and gameplay mechanics. It showcases how thoughtful Unity architecture combined with responsive gameplay mechanics can deliver a compelling and challenging 3D platforming experience.
 
 # Play Link
+https://sayannandi.itch.io/obstacle-dodge
 
 [![Watch the video](https://img.youtube.com/vi/G06tTVnXheY/maxresdefault.jpg)](https://youtu.be/G06tTVnXheY)
 ### [Gameplay Video](https://youtu.be/G06tTVnXheY)
